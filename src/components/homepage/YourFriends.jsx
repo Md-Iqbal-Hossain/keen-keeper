@@ -161,21 +161,14 @@
 
 
 // another 
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import FriendCard from '../ui/FriendCard';
+import { HashLoader } from 'react-spinners';
+import useFriends from '../../hooks/useFriends';
 
 const YourFriends = () => {
 
-    const [friends, setFriends] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const res = await fetch('/friends.json');
-            const data = await res.json();
-            setFriends(data);
-        }
-        fetchData();
-    }, []);
+    const {friends, loading} = useFriends();
 
     return (
         <div className='bg-[#F8FAFC] py-10 min-h-screen flex justify-center'>
@@ -189,7 +182,8 @@ const YourFriends = () => {
                 </div>
 
                 {/* Cards Container */}
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+                {loading ? (
+                    <div className='flex justify-center items-center'><HashLoader color='#244D3F'/></div>) : <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
 
                     {
                         friends.map((friend) => (
@@ -243,11 +237,11 @@ const YourFriends = () => {
 
                             //     </div>
                             // </div>
-                            <FriendCard friend={friend}/>
+                            <FriendCard friend={friend} />
                         ))
                     }
 
-                </div>
+                </div>}
             </div>
         </div>
     );
