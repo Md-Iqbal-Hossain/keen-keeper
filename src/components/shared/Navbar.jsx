@@ -13,12 +13,12 @@ const Navbar = () => {
             icon: RiHome2Line
         },
         {
-            path: '/friends',
+            path: '/timeline',
             text: 'Timeline',
             icon: RiTimeLine
         },
         {
-            path: '/timeline',
+            path: '/stats',
             text: 'Stats',
             icon: PiChartLineLight
         }
