@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Aarav Rahman",
+    "picture": "https://randomuser.me/api/portraits/men/32.jpg",
+    "email": "aarav.rahman@gmail.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["university", "close friend"],
+    "bio": "Met during software engineering classes. We used to work on projects together and share coding tips.",
+    "goal": 14,
+    "next_due_date": "2026-04-10"
+  },
+  {
+    "id": 2,
+    "name": "Nusrat Jahan",
+    "picture": "https://randomuser.me/api/portraits/women/44.jpg",
+    "email": "nusrat.jahan@yahoo.com",
+    "days_since_contact": 10,
+    "status": "almost due",
+    "tags": ["school", "best friend"],
+    "bio": "School friend since childhood. We still talk about old memories and life updates.",
+    "goal": 14,
+    "next_due_date": "2026-04-18"
+  },
+  {
+    "id": 3,
+    "name": "Emil Hansen",
+    "picture": "https://randomuser.me/api/portraits/men/65.jpg",
+    "email": "emil.hansen@mail.dk",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["denmark", "classmate"],
+    "bio": "Met in Denmark during my master's program. Loves football and group study sessions.",
+    "goal": 14,
+    "next_due_date": "2026-04-24"
+  },
+  {
+    "id": 4,
+    "name": "Farhan Ahmed",
+    "picture": "https://randomuser.me/api/portraits/men/12.jpg",
+    "email": "farhan.ahmed@gmail.com",
+    "days_since_contact": 22,
+    "status": "overdue",
+    "tags": ["gym", "neighbor"],
+    "bio": "We used to go to the gym together regularly. Haven’t caught up in a while.",
+    "goal": 14,
+    "next_due_date": "2026-04-05"
+  },
+  {
+    "id": 5,
+    "name": "Sofia Larsen",
+    "picture": "https://randomuser.me/api/portraits/women/68.jpg",
+    "email": "sofia.larsen@mail.dk",
+    "days_since_contact": 13,
+    "status": "almost due",
+    "tags": ["denmark", "group project"],
+    "bio": "Worked together on a group assignment. Very organized and helpful teammate.",
+    "goal": 14,
+    "next_due_date": "2026-04-17"
+  },
+  {
+    "id": 6,
+    "name": "Rakib Hasan",
+    "picture": "https://randomuser.me/api/portraits/men/77.jpg",
+    "email": "rakib.hasan@gmail.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["childhood", "gaming"],
+    "bio": "Childhood friend. We still play online games and chat on weekends.",
+    "goal": 14,
+    "next_due_date": "2026-04-26"
+  },
+  {
+    "id": 7,
+    "name": "Maya Singh",
+    "picture": "https://randomuser.me/api/portraits/women/21.jpg",
+    "email": "maya.singh@gmail.com",
+    "days_since_contact": 16,
+    "status": "overdue",
+    "tags": ["internship", "friend"],
+    "bio": "Met during an internship. We used to have lunch together and discuss career plans.",
+    "goal": 14,
+    "next_due_date": "2026-04-12"
+  },
+  {
+    "id": 8,
+    "name": "Jonas Pedersen",
+    "picture": "https://randomuser.me/api/portraits/men/55.jpg",
+    "email": "jonas.pedersen@mail.dk",
+    "days_since_contact": 8,
+    "status": "on-track",
+    "tags": ["denmark", "travel buddy"],
+    "bio": "Traveled across Denmark together. Always up for exploring new places.",
+    "goal": 14,
+    "next_due_date": "2026-04-20"
+  }
+]
