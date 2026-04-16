@@ -1,17 +1,57 @@
-import React, { createContext } from 'react';
+// import React, { createContext, useState } from 'react';
 
-// 1. Create the Context
+// // 1. Create the Context
+// export const CallFriendsContext = createContext();
+
+// // 2. Create the Provider
+// const CallFriendsProvider = ({ children }) => {
+
+//     const [callFriends, setCallFriends] = useState([]);
+//     // You can put state here later!
+//     const data = {
+//         callFriends, setCallFriends
+//     };
+//     console.log(data);
+    
+
+//     return (
+//         <CallFriendsContext.Provider value={data}>
+//             {children}
+//         </CallFriendsContext.Provider>
+//     );
+// };
+
+// export default CallFriendsProvider;
+
+
+
+
+
+// another 
+// components/context/CallFriendsContext.jsx
+import React, { createContext, useState } from 'react';
+
 export const CallFriendsContext = createContext();
 
-// 2. Create the Provider
 const CallFriendsProvider = ({ children }) => {
-    // You can put state here later!
-    const data = {
-        name: 'Iqbal',
-        age: 30
+    // We'll store objects like: { id: 1, name: 'Aarav', type: 'Call', date: 'March 29, 2026' }
+    const [timelineEvents, setTimelineEvents] = useState([]);
+
+    const addEvent = (friend, type) => {
+        const newEvent = {
+            eventId: Date.now(), // unique ID for the list
+            name: friend.name,
+            type: type, // 'Call', 'Text', or 'Video'
+            date: new Date().toLocaleDateString('en-US', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric'
+            })
+        };
+        setTimelineEvents(prev => [newEvent, ...prev]); // Newest first
     };
-    console.log(data);
-    
+
+    const data = { timelineEvents, addEvent };
 
     return (
         <CallFriendsContext.Provider value={data}>

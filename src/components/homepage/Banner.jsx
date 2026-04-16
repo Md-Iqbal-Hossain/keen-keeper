@@ -20,7 +20,7 @@ import { FaPlus } from 'react-icons/fa';
 
 const Banner = () => {
     return (
-        <div className='bg-[#F8FAFC] text-center py-10 border-t border-gray-200'>
+        <div className='bg-[#F8FAFC] text-center py-10'>
             
             <h2 className='font-bold text-5xl mb-4'>
                 Friends to keep close in your life

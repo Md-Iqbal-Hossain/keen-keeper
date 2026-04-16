@@ -25,7 +25,7 @@ const Navbar = () => {
     ]
 
     return (
-        <nav className='shadow'>
+        <nav className='shadow border-b border-gray-200'>
             <div className='flex justify-between gap-4 items-center  py-[8px] container mx-auto'>
                 <img src={logoImg} alt="" className='w-[120px]' />
                 <ul className='flex justify-between gap-2 items-center'>

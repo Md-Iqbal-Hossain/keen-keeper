@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useParams } from 'react-router';
 import useFriends from '../../hooks/useFriends';
 import { FaArchive, FaTrash, FaBell } from 'react-icons/fa';
@@ -7,6 +7,7 @@ import { PiBellSimpleZBold, PiChatDotsBold } from 'react-icons/pi';
 import { BsCameraVideo } from 'react-icons/bs';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { HashLoader } from 'react-spinners';
+import { CallFriendsContext } from '../../components/context/CallFriendsContext';
 
 const FriendDetails = () => {
     const { id } = useParams();
@@ -21,26 +22,33 @@ const FriendDetails = () => {
         return 'badge-ghost';
     };
 
-    const [callFriends, setCallFriends] = useState([]);
+    const { callFriends, setCallFriends } = useContext(CallFriendsContext);
     const [textFriends, setTextFriends] = useState([]);
     const [videoFriends, setVideoFriends] = useState([]);
 
-    if (loading) return <div className='h-[60vh] flex justify-center items-center'><HashLoader color='#244D3F'/></div>;
+    if (loading) return <div className='h-[60vh] flex justify-center items-center'><HashLoader color='#244D3F' /></div>;
     if (!friend) return <div className="text-center mt-10">Friend not found.</div>;
 
-    const handleCallFriends = () => {
-        setCallFriends([...callFriends, friend]);
-    }
+    // const handleCallFriends = () => {
+    //     setCallFriends([...callFriends, friend]);
+    // }
 
-    console.log(callFriends, 'callfriends');
-    
+    // console.log(callFriends, 'callfriends');
+
+    const { addEvent } = useContext(CallFriendsContext);
+
+    const handleCheckIn = (type) => {
+        addEvent(friend, type);
+        // Optional: Add a toast notification here
+    };
+
 
     return (
-        
+
         <div className="w-full bg-slate-50 py-14 px-4">
             <div className="max-w-5xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-                    
+
                     {/* Left Column: Profile & Sidebar Actions */}
                     <div className="md:col-span-4 flex flex-col gap-4">
                         {/* Profile Card */}
@@ -51,7 +59,7 @@ const FriendDetails = () => {
                                 </div>
                             </div>
                             <h2 className="text-2xl font-bold text-slate-800">{friend.name}</h2>
-                            
+
                             <div className="mt-2">
                                 <span className={`badge border-none capitalize font-bold px-4 py-3 rounded-xl ${getStatusBadgeClass(friend.status)}`}>
                                     {friend.status}
@@ -65,7 +73,7 @@ const FriendDetails = () => {
                                     </span>
                                 ))}
                             </div>
-                            
+
                             <p className="italic text-slate-500 text-sm mb-2 px-4 leading-relaxed">
                                 "{friend.bio}"
                             </p>
@@ -88,7 +96,7 @@ const FriendDetails = () => {
 
                     {/* Right Column: Stats, Goals & Quick Check In */}
                     <div className="md:col-span-8 flex flex-col gap-6">
-                        
+
                         {/* Upper Stats section */}
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
@@ -120,15 +128,15 @@ const FriendDetails = () => {
                         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                             <h3 className="font-bold text-emerald-800 text-lg mb-6">Quick Check-In</h3>
                             <div className="grid grid-cols-3 gap-4">
-                                <button className="flex flex-col items-center justify-center py-8 border border-gray-100 rounded-xl hover:bg-slate-50 transition-colors shadow-sm" onClick={handleCallFriends}>
+                                <button className="flex flex-col items-center justify-center py-8 border border-gray-100 rounded-xl hover:bg-slate-50 transition-colors shadow-sm" onClick={() => handleCheckIn('Call')}>
                                     <FiPhoneCall className="text-2xl mb-2 text-slate-600" />
                                     <span className="text-slate-600 font-medium">Call</span>
                                 </button>
-                                <button className="flex flex-col items-center justify-center py-8 border border-gray-100 rounded-xl hover:bg-slate-50 transition-colors shadow-sm">
+                                <button className="flex flex-col items-center justify-center py-8 border border-gray-100 rounded-xl hover:bg-slate-50 transition-colors shadow-sm" onClick={() => handleCheckIn('Text')}>
                                     <PiChatDotsBold className="text-2xl mb-2 text-slate-600" />
                                     <span className="text-slate-600 font-medium">Text</span>
                                 </button>
-                                <button className="flex flex-col items-center justify-center py-8 border border-gray-100 rounded-xl hover:bg-slate-50 transition-colors shadow-sm">
+                                <button className="flex flex-col items-center justify-center py-8 border border-gray-100 rounded-xl hover:bg-slate-50 transition-colors shadow-sm" onClick={() => handleCheckIn('Video')}>
                                     <BsCameraVideo className="text-2xl mb-2 text-slate-600" />
                                     <span className="text-slate-600 font-medium">Video</span>
                                 </button>
