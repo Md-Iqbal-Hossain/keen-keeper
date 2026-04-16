@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import useFriends from '../../hooks/useFriends';
 import { FaArchive, FaTrash, FaBell } from 'react-icons/fa';
-import { FiPhoneCall } from 'react-icons/fi';
-import { PiChatDotsBold } from 'react-icons/pi';
+import { FiArchive, FiPhoneCall } from 'react-icons/fi';
+import { PiBellSimpleZBold, PiChatDotsBold } from 'react-icons/pi';
 import { BsCameraVideo } from 'react-icons/bs';
+import { RiDeleteBinLine } from 'react-icons/ri';
+import { HashLoader } from 'react-spinners';
 
 const FriendDetails = () => {
     const { id } = useParams();
@@ -19,14 +21,22 @@ const FriendDetails = () => {
         return 'badge-ghost';
     };
 
-    if (loading) return <div className="text-center mt-10">Loading...</div>;
+    const [callFriends, setCallFriends] = useState([]);
+    const [textFriends, setTextFriends] = useState([]);
+    const [videoFriends, setVideoFriends] = useState([]);
+
+    if (loading) return <div className='h-[60vh] flex justify-center items-center'><HashLoader color='#244D3F'/></div>;
     if (!friend) return <div className="text-center mt-10">Friend not found.</div>;
 
+    const handleCallFriends = () => {
+        setCallFriends([...callFriends, friend]);
+    }
+
+    console.log(callFriends, 'callfriends');
+    
+
     return (
-        /* UPDATED WRAPPER: 
-           - Used 'py-6' for a smaller, equal top/bottom padding.
-           - Removed 'min-h-screen' and flex-centering to prevent the 'bottom-heavy' look.
-        */
+        
         <div className="w-full bg-slate-50 py-14 px-4">
             <div className="max-w-5xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
@@ -65,21 +75,21 @@ const FriendDetails = () => {
                         {/* Action Buttons */}
                         <div className="flex flex-col gap-2">
                             <button className="btn btn-ghost bg-white border border-gray-200 justify-center normal-case font-medium">
-                                <FaBell className="mr-2" /> Snooze 2 Weeks
+                                <PiBellSimpleZBold className="mr-2" /> Snooze 2 Weeks
                             </button>
                             <button className="btn btn-ghost bg-white border border-gray-200 justify-center normal-case font-medium">
-                                <FaArchive className="mr-2" /> Archive
+                                <FiArchive className="mr-2" /> Archive
                             </button>
                             <button className="btn btn-ghost bg-white border border-gray-200 justify-center normal-case font-medium text-red-500 hover:bg-red-50">
-                                <FaTrash className="mr-2" /> Delete
+                                <RiDeleteBinLine className="mr-2" /> Delete
                             </button>
                         </div>
                     </div>
 
-                    {/* Right Column: Stats & Goals */}
+                    {/* Right Column: Stats, Goals & Quick Check In */}
                     <div className="md:col-span-8 flex flex-col gap-6">
                         
-                        {/* Top Stats Grid */}
+                        {/* Upper Stats section */}
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
                                 <h3 className="text-4xl font-bold text-slate-700">{friend.days_since_contact}</h3>
@@ -110,7 +120,7 @@ const FriendDetails = () => {
                         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                             <h3 className="font-bold text-emerald-800 text-lg mb-6">Quick Check-In</h3>
                             <div className="grid grid-cols-3 gap-4">
-                                <button className="flex flex-col items-center justify-center py-8 border border-gray-100 rounded-xl hover:bg-slate-50 transition-colors shadow-sm">
+                                <button className="flex flex-col items-center justify-center py-8 border border-gray-100 rounded-xl hover:bg-slate-50 transition-colors shadow-sm" onClick={handleCallFriends}>
                                     <FiPhoneCall className="text-2xl mb-2 text-slate-600" />
                                     <span className="text-slate-600 font-medium">Call</span>
                                 </button>

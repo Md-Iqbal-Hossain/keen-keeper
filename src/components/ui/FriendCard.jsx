@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const FriendCard = ({friend}) => {
 
@@ -10,7 +11,7 @@ const FriendCard = ({friend}) => {
     };
 
     return (
-        <div
+        <Link to={`/friends/${friend.id}`}
             key={friend.id}
             className="card bg-base-100 w-80 shadow-md p-4 flex flex-col items-center text-center"
         >
@@ -59,7 +60,7 @@ const FriendCard = ({friend}) => {
                 </div>
 
             </div>
-        </div>
+        </Link>
     );
 };
 
