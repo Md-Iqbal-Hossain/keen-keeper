@@ -23,10 +23,14 @@
 // pages/timeline/Timeline.jsx
 import React, { useContext, useState } from 'react';
 import { CallFriendsContext } from '../../components/context/CallFriendsContext';
-import { FiPhoneCall } from 'react-icons/fi';
-import { PiChatDotsBold } from 'react-icons/pi';
-import { BsCameraVideo, BsChatDots, BsFillCameraVideoFill } from 'react-icons/bs';
-import { IoCall } from 'react-icons/io5';
+// import { FiPhoneCall } from 'react-icons/fi';
+// import { PiChatDotsBold } from 'react-icons/pi';
+// import { BsCameraVideo, BsChatDots, BsFillCameraVideoFill } from 'react-icons/bs';
+// import { IoCall } from 'react-icons/io5';
+
+import callImg from '../../assets/images/call.png'
+import textImg from '../../assets/images/text.png'
+import videoImg from '../../assets/images/video.png'
 
 const Timeline = () => {
     const { timelineEvents } = useContext(CallFriendsContext);
@@ -38,9 +42,9 @@ const Timeline = () => {
 
     const getIcon = (type) => {
         switch (type) {
-            case 'Call': return <IoCall className="text-xl"/>;
-            case 'Text': return <BsChatDots className="text-xl"/>;
-            case 'Video': return <BsFillCameraVideoFill className="text-xl"/>;
+            case 'Call': return  <div><img src={callImg} alt="" /></div>;
+            case 'Text': return  <div><img src={textImg} alt="" /></div>;
+            case 'Video': return  <div><img src={videoImg} alt="" /></div>;
             default: return null;
         }
     };

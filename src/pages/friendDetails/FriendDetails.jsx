@@ -8,6 +8,7 @@ import { BsCameraVideo } from 'react-icons/bs';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { HashLoader } from 'react-spinners';
 import { CallFriendsContext } from '../../components/context/CallFriendsContext';
+import { toast } from 'react-toastify';
 
 const FriendDetails = () => {
     const { id } = useParams();
@@ -22,9 +23,9 @@ const FriendDetails = () => {
         return 'badge-ghost';
     };
 
-    const { callFriends, setCallFriends } = useContext(CallFriendsContext);
-    const [textFriends, setTextFriends] = useState([]);
-    const [videoFriends, setVideoFriends] = useState([]);
+    // const { callFriends, setCallFriends } = useContext(CallFriendsContext);
+    // const [textFriends, setTextFriends] = useState([]);
+    // const [videoFriends, setVideoFriends] = useState([]);
 
     if (loading) return <div className='h-[60vh] flex justify-center items-center'><HashLoader color='#244D3F' /></div>;
     if (!friend) return <div className="text-center mt-10">Friend not found.</div>;
@@ -39,7 +40,12 @@ const FriendDetails = () => {
 
     const handleCheckIn = (type) => {
         addEvent(friend, type);
-        // Optional: Add a toast notification here
+
+        toast.success(`${type} with ${friend.name} recorded!`, {
+            position: "top-center",
+            autoClose: 3000,
+            icon: true,
+        });
     };
 
 
