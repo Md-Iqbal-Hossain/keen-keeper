@@ -1,34 +1,3 @@
-// import React, { createContext, useState } from 'react';
-
-// // 1. Create the Context
-// export const CallFriendsContext = createContext();
-
-// // 2. Create the Provider
-// const CallFriendsProvider = ({ children }) => {
-
-//     const [callFriends, setCallFriends] = useState([]);
-//     // You can put state here later!
-//     const data = {
-//         callFriends, setCallFriends
-//     };
-//     console.log(data);
-    
-
-//     return (
-//         <CallFriendsContext.Provider value={data}>
-//             {children}
-//         </CallFriendsContext.Provider>
-//     );
-// };
-
-// export default CallFriendsProvider;
-
-
-
-
-
-// another 
-// components/context/CallFriendsContext.jsx
 import React, { createContext, useState } from 'react';
 
 export const CallFriendsContext = createContext();

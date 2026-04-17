@@ -1,16 +1,26 @@
-# React + Vite
+# Project Name - Keen Keeper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Short Description
 
-Currently, two official plugins are available:
+Keen Keeper is a modern relationship management dashboard built with React. It empowers users to nurture meaningful connections by tracking interactions, monitoring communication health, and visualizing social patterns through an intuitive interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tech Stack
 
-## React Compiler
+- **Frontend:** React.js (v18+)
+- **Styling:** Tailwind CSS & DaisyUI
+- **Routing:** React Router
+- **State Management:** React Context API
+- **Visualization:** Recharts
+- **Icons:** React Icons
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Key Features
 
-## Expanding the ESLint configuration
+* **Friend Management System:** Real-time monitoring of relationship status using visual indicators:
+    * 🟢 **On-track:** Communication is frequent and up to date.
+    * 🟡 **Almost Due:** It's getting close to time for a check-in.
+    * 🔴 **Overdue:** Relationship requires immediate attention.
+* **Interactive Timeline Tracking:** A comprehensive history of every Call, Text, and Video chat. 
+    * *Filterable logs* to drill down into specific interaction types.
+* **Analytics Dashboard:** Data-driven insights.
+    * Visualize interaction trends over weeks or months to identify gaps in your social habits.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

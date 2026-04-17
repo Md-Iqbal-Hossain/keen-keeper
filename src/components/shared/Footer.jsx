@@ -11,7 +11,7 @@ const Footer = () => {
         <footer className="w-full bg-[#1F4D3C] text-[#E0E0E0]/80 py-12 px-4 mt-auto font-sans">
             <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
                 
-                {/* TOP SECTION (logo, tagline, social links) */}
+                {/* TOP SECTION */}
                 <div className="flex flex-col items-center gap-4 mb-8">
                     {/* 1. Large Logo Image */}
                     <img 
@@ -30,17 +30,15 @@ const Footer = () => {
                         <h4 className="font-semibold text-white text-lg tracking-wide">Social Links</h4>
                         
                         <div className="flex gap-5">
-                            {/* Instagram */}
+
                             <a href="#" target="_blank" className="hover:opacity-80 transition-opacity">
                                 <img src={iImg} />
                             </a>
-                            
-                            {/* Facebook */}
+
                             <a href="#" target="_blank" className="hover:opacity-80 transition-opacity">
                                 <img src={fbImg} />
                             </a>
-                            
-                            {/* Twitter */}
+
                             <a href="#" target="_blank" className="hover:opacity-80 transition-opacity">
                                 <img src={tImg} />
                             </a>
@@ -48,7 +46,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* BOTTOM SECTION (copyright and policy links) */}
+                {/* BOTTOM SECTION */}
                 <div className="w-full border-t border-[#FFFFFF]/10 pt-6 mt-auto">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm text-[#A0A0A0]">
                         

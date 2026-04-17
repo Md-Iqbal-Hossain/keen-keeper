@@ -45,7 +45,7 @@ const FriendDetails = () => {
             <div className="max-w-5xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
 
-                    {/* Left Column: Profile & Sidebar Actions */}
+                    {/* Left Column */}
                     <div className="md:col-span-4 flex flex-col gap-4">
                         {/* Profile Card */}
                         <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
@@ -90,7 +90,7 @@ const FriendDetails = () => {
                         </div>
                     </div>
 
-                    {/* Right Column: Stats, Goals & Quick Check In */}
+                    {/* Right Column */}
                     <div className="md:col-span-8 flex flex-col gap-6">
 
                         {/* Upper Stats section */}
