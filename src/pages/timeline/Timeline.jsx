@@ -1,32 +1,6 @@
-// import React, { useContext } from 'react';
-// import { CallFriendsContext } from '../../components/context/CallFriendsContext';
 
-// const Timeline = () => {
-//     const {callFriends, setCallFriends} = useContext(CallFriendsContext);
-//     console.log(callFriends, 'context data');
-     
-//     return (
-//         <div>
-//             Timeline
-//         </div>
-//     );
-// };
-
-// export default Timeline;
-
-
-
-
-
-
-// another
-// pages/timeline/Timeline.jsx
 import React, { useContext, useState } from 'react';
 import { CallFriendsContext } from '../../components/context/CallFriendsContext';
-// import { FiPhoneCall } from 'react-icons/fi';
-// import { PiChatDotsBold } from 'react-icons/pi';
-// import { BsCameraVideo, BsChatDots, BsFillCameraVideoFill } from 'react-icons/bs';
-// import { IoCall } from 'react-icons/io5';
 
 import callImg from '../../assets/images/call.png'
 import textImg from '../../assets/images/text.png'
@@ -41,13 +15,16 @@ const Timeline = () => {
         : timelineEvents.filter(e => e.type === filter);
 
     const getIcon = (type) => {
-        switch (type) {
-            case 'Call': return  <div><img src={callImg} alt="" /></div>;
-            case 'Text': return  <div><img src={textImg} alt="" /></div>;
-            case 'Video': return  <div><img src={videoImg} alt="" /></div>;
-            default: return null;
-        }
-    };
+    if (type === 'Call') {
+        return <div><img src={callImg} alt="" /></div>;
+    } else if (type === 'Text') {
+        return <div><img src={textImg} alt="" /></div>;
+    } else if (type === 'Video') {
+        return <div><img src={videoImg} alt="" /></div>;
+    } else {
+        return null;
+    }
+};
 
     return (
         <div className="min-h-screen bg-slate-50 py-10 px-4">
@@ -77,7 +54,7 @@ const Timeline = () => {
                                 key={event.eventId} 
                                 className="border border-gray-200 rounded-lg p-4 flex items-center gap-4 bg-white hover:bg-slate-50 transition-colors"
                             >
-                                {/* Icon Circle */}
+                                {/* Icon */}
                                 <div className="bg-white p-3  text-slate-600">
                                     {getIcon(event.type)}
                                 </div>

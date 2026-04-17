@@ -6,7 +6,7 @@ import Timeline from '../pages/timeline/Timeline'
 import NotFoundPage from '../pages/NotFoundPage/NotFoundPage'
 import FriendDetails from "../pages/friendDetails/FriendDetails";
 import Stats from "../components/homepage/Stats";
-
+import Chart from "../pages/chart/Chart";
 
 
 export const router = createBrowserRouter([
@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/stats',
-        element: <Timeline />
+        element: <Chart />
       }
     ],
     errorElement: <NotFoundPage />

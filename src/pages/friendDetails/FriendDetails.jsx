@@ -23,18 +23,8 @@ const FriendDetails = () => {
         return 'badge-ghost';
     };
 
-    // const { callFriends, setCallFriends } = useContext(CallFriendsContext);
-    // const [textFriends, setTextFriends] = useState([]);
-    // const [videoFriends, setVideoFriends] = useState([]);
-
     if (loading) return <div className='h-[60vh] flex justify-center items-center'><HashLoader color='#244D3F' /></div>;
     if (!friend) return <div className="text-center mt-10">Friend not found.</div>;
-
-    // const handleCallFriends = () => {
-    //     setCallFriends([...callFriends, friend]);
-    // }
-
-    // console.log(callFriends, 'callfriends');
 
     const { addEvent } = useContext(CallFriendsContext);
 

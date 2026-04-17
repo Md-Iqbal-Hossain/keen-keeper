@@ -34,7 +34,7 @@ import React, { createContext, useState } from 'react';
 export const CallFriendsContext = createContext();
 
 const CallFriendsProvider = ({ children }) => {
-    // We'll store objects like: { id: 1, name: 'Aarav', type: 'Call', date: 'March 29, 2026' }
+
     const [timelineEvents, setTimelineEvents] = useState([]);
 
     const addEvent = (friend, type) => {
