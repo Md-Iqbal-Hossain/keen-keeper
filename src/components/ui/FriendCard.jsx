@@ -13,7 +13,7 @@ const FriendCard = ({friend}) => {
     return (
         <Link to={`/friends/${friend.id}`}
             key={friend.id}
-            className="card bg-base-100 w-80 shadow-md p-4 flex flex-col items-center text-center"
+            className="card bg-base-100 w-76 shadow-md p-4 flex flex-col items-center text-center"
         >
 
             {/* Image */}

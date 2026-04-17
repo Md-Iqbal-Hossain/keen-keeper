@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
                 
                 {/* TOP SECTION (logo, tagline, social links) */}
-                <div className="flex flex-col items-center gap-6 mb-8">
+                <div className="flex flex-col items-center gap-4 mb-8">
                     {/* 1. Large Logo Image */}
                     <img 
                         src={fLogo} 
@@ -21,7 +21,7 @@ const Footer = () => {
                     />
 
                     {/* 2. Tagline Text */}
-                    <p className="text-sm md:text-base max-w-2xl leading-relaxed">
+                    <p className="text-sm md:text-base max-w-3xl leading-relaxed">
                         Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.
                     </p>
 
